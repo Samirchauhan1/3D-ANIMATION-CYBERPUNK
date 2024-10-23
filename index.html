@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CYBERPUNK</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <div class="main w-full font-[helvetica_Now_Display] ">
+
+    <nav class="w-full fixed top-0 left-0 px-10 py-3 flex justify-between items-center">
+      <img class=" w-[150px] mix-blend-screen filter saturate-150 contrast-125"
+      src="https://i.redd.it/3d-rendered-the-cyberpunk-logo-using-blender-v0-khopj82wqee91.png?width=1920&format=png&auto=webp&s=f42dbd8f5c04aedb9ba9291c1ba4d679029cc1f3" alt="">
+      <div class="flex gap-5 items-center">
+        <a href="#" class="tracking-tight text-white hover:text-cyan-400 hover:text-shadow-[0_0_10px_#0ff] transition-all duration-300">Games</a>
+        <a href="#" class="tracking-tight text-white hover:text-cyan-400 hover:text-shadow-[0_0_10px_#0ff] transition-all duration-300">News</a>
+        <a href="#" class="tracking-tight text-white hover:text-cyan-400 hover:text-shadow-[0_0_10px_#0ff] transition-all duration-300">Community</a>
+        <a href="#" class="tracking-tight text-white hover:text-cyan-400 hover:text-shadow-[0_0_10px_#0ff] transition-all duration-300">Shop</a>
+        <a href="#" class="tracking-tight text-white hover:text-cyan-400 hover:text-shadow-[0_0_10px_#0ff] transition-all duration-300">Support</a>
+      </div>
+    </nav>
+
+    <div class="w-full h-full overflow-hidden">
+      <img class="absolute w-2/3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-screen filter saturate-150 contrast-125"
+       src="https://i.redd.it/3d-rendered-the-cyberpunk-logo-using-blender-v0-khopj82wqee91.png?width=1920&format=png&auto=webp&s=f42dbd8f5c04aedb9ba9291c1ba4d679029cc1f3" alt="">
+
+       <div class="w-[22rem] h-[22rem] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1] rounded-full bg-blue-600 blur-3xl blur[90px]"></div>
+      <canvas id="canvas"></canvas>
+
+      <div class="absolute bottom-0 left-0 w-1/4 h-1/3 z-10 p-4">
+        <div class="relative w-full h-full overflow-hidden rounded-[2rem] shadow-lg transition-all duration-300 hover:shadow-cyan-400/50">
+          <video 
+            class="w-full h-full object-cover filter blur-[2px] transition-all duration-300 hover:blur-0" 
+            autoplay 
+            loop 
+            muted 
+            playsinline
+          >
+            <source src="https://pool-stream.gamersyde.com/securestream.php/REs51kBsiSknhLeRxOJC7g/46778_1080p30.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
+        </div>
+      </div>
+
+      <div class="absolute bottom-4 right-4 z-20">
+        <img id="logo" src="https://img.freepik.com/premium-photo/gun-futuristic-sci-fi-assault-rifle-weapon-pistol-revolver_662214-8624.jpg" 
+             alt="Cyberpunk Logo" 
+             class="h-[130px] w-[250px] transition-all object-fit duration-300 hover:filter">
+      </div>
+    </div>
+
+    <div class="w-full h-screen relative bg-black">
+      <div class="container mx-auto px-4 py-16 text-white">
+        <h2 class="text-4xl font-bold mb-8 text-center text-cyan-400 text-shadow-[0_0_10px_#0ff]">Gaming Experience</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-cyan-400/50 transition-all duration-300">
+            <h3 class="text-2xl font-semibold mb-4 text-cyan-300">Immersive Gameplay</h3>
+            <p class="text-gray-300">Dive into a dystopian future where every decision shapes your destiny. Experience unparalleled immersion with cutting-edge graphics and responsive gameplay.</p>
+          </div>
+          <div class="bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-cyan-400/50 transition-all duration-300">
+            <h3 class="text-2xl font-semibold mb-4 text-cyan-300">Customizable Character</h3>
+            <p class="text-gray-300">Create your unique persona in Night City. Customize your appearance, skills, and cybernetic enhancements to suit your playstyle and survive in this unforgiving world.</p>
+          </div>
+          <div class="bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-cyan-400/50 transition-all duration-300">
+            <h3 class="text-2xl font-semibold mb-4 text-cyan-300">Open World</h3>
+            <p class="text-gray-300">Explore the vast, neon-lit streets of Night City. From towering megabuildings to gritty back alleys, every corner holds a new adventure or deadly threat.</p>
+          </div>
+          <div class="bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-cyan-400/50 transition-all duration-300">
+            <h3 class="text-2xl font-semibold mb-4 text-cyan-300">Engaging Storyline</h3>
+            <p class="text-gray-300">Unravel a complex narrative filled with memorable characters, intense action, and moral dilemmas. Your choices will shape the fate of Night City and its inhabitants.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mx-auto px-4 py-16 text-white">
+        <h2 class="text-4xl font-bold mb-8 text-center text-cyan-400 text-shadow-[0_0_10px_#0ff]">About Cyberpunk</h2>
+        <div class="bg-gray-900 p-8 rounded-lg shadow-lg hover:shadow-cyan-400/50 transition-all duration-300">
+          <p class="text-gray-300 mb-4">Cyberpunk is more than just a game - it's a glimpse into a possible future where technology and humanity have become inseparable. Set in the sprawling metropolis of Night City, players navigate a world where corporations rule, cybernetic enhancements are the norm, and danger lurks around every corner.</p>
+          <p class="text-gray-300 mb-4">Our team of passionate developers and artists have poured their hearts and souls into creating a living, breathing world that pushes the boundaries of what's possible in gaming. From the intricate details of the city's architecture to the complex web of relationships between characters, every aspect of Cyberpunk has been crafted with care and attention to detail.</p>
+          <p class="text-gray-300">Whether you're a longtime fan of the cyberpunk genre or new to this neon-drenched world, we invite you to jack in and experience the future of gaming. Welcome to Cyberpunk - where the lines between human and machine blur, and your choices shape the fate of an entire city.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
