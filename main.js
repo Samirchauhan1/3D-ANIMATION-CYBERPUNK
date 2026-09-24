@@ -1,7 +1,7 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js';
-import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/loaders/GLTFLoader.js';
-import { RGBELoader } from 'https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/loaders/RGBELoader.js';
-import gsap from 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js';
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
+import gsap from 'gsap';
 
 const canvas = document.querySelector('#canvas');
 const scene = new THREE.Scene();
@@ -32,7 +32,7 @@ new RGBELoader().load(
 
 let model = null;
 new GLTFLoader().load(
-  '/3D-ANIMATION-CYBERPUNK/DamagedHelmet.gltf',
+  `${import.meta.env.BASE_URL}DamagedHelmet.gltf`,
   (gltf) => {
     model = gltf.scene;
     const bounds = new THREE.Box3().setFromObject(model);
