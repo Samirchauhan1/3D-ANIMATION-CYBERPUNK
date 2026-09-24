@@ -1,8 +1,7 @@
-import './style.css';
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
-import gsap from 'gsap';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js';
+import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/loaders/GLTFLoader.js';
+import { RGBELoader } from 'https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/loaders/RGBELoader.js';
+import gsap from 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js';
 
 const canvas = document.querySelector('#canvas');
 const scene = new THREE.Scene();
@@ -24,7 +23,6 @@ const rimLight = new THREE.PointLight(0x00bfff, 25, 15);
 rimLight.position.set(-3, 1, -2);
 scene.add(rimLight);
 
-// Environment reflection is optional; the scene remains lit if the remote HDR fails.
 new RGBELoader().load(
   'https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/pond_bridge_night_1k.hdr',
   (texture) => { texture.mapping = THREE.EquirectangularReflectionMapping; scene.environment = texture; },
@@ -34,10 +32,9 @@ new RGBELoader().load(
 
 let model = null;
 new GLTFLoader().load(
-  `${import.meta.env.BASE_URL}DamagedHelmet.gltf`,
+  '/3D-ANIMATION-CYBERPUNK/DamagedHelmet.gltf',
   (gltf) => {
     model = gltf.scene;
-    // Normalize the asset's bounds so it is reliably centered and visible.
     const bounds = new THREE.Box3().setFromObject(model);
     const center = bounds.getCenter(new THREE.Vector3());
     const size = bounds.getSize(new THREE.Vector3());
@@ -69,7 +66,6 @@ function resize() {
 }
 window.addEventListener('resize', resize);
 
-// Render only while visible to reduce battery and CPU/GPU usage in background tabs.
 let frameId;
 function animate() {
   frameId = requestAnimationFrame(animate);
